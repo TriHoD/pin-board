@@ -11,5 +11,6 @@ require('./config/express')(app, Config[env]);
 require('./config/routes')(app);
 require('./config/passport')();
 
-app.listen(PORT);
-console.log(`Server listen on port ${PORT}...`);
+app.listen(PORT, (req, res) => {
+    console.log(`Server listen on port ${PORT}...`);
+});
