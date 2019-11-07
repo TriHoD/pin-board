@@ -1,9 +1,9 @@
-
+const port = 3000;
 const Config = require('./config/config');
 const database = require('./config/database.config');
 const express = require('express');
 
-require('dotenv').config();
+// require('dotenv').config();
 
 
 let app = express();
@@ -16,8 +16,11 @@ require('./config/express')(app, Config[env]);
 require('./config/routes')(app);
 require('./config/passport')();
 
-const PORT = process.env.PORT;
+// let PORT = process.env.PORT;
 
-app.listen(PORT, (req, res) => {
-    console.log(`Server listen on port ${PORT}...`);
-});
+// app.listen(PORT, (req, res) => {
+//     console.log(`Server listen on port ${PORT}...`);
+// });
+
+app.listen(port);
+console.log(`Server listen on port ${port}...`);
